@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    color: black;
+}
+  
+.logo {
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+}
+  
+.navbar-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+  
+.nav-link {
+    color: rgb(2, 2, 31);
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+  
+.nav-link:hover {
+    transform: scale(1.1);
+}
+
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.mobile-only {
+    display: none;
+}
+  
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px auto;
+    transition: transform 0.4s, opacity 0.2s;
+}
+
+.animate:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+.animate:nth-child(2) {
+    opacity: 0;
+  }
+  
+.animate:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Styles for the exit icon */
+.exit .bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+  
+.exit .bar:nth-child(2) {
+    opacity: 0;
+}
+  
+.exit .bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+  
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+}
+
+.logonav {
+    text-decoration: none; 
+    color: black; font-weight: 1000; font-size: 35px;
+}
+
+.logonav2 {
+    font-size: 15px;
+    text-align: center;
+    color: black;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    /* Styles for screens up to 768px wide */
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgb(109, 103, 123);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        padding-top: 50px;
+        transition: transform 0.4s;
+        z-index: 999;
+        overflow-y: auto;
+    }
+    
+    .nav-item {
+        margin: 10px 0;
+        font-size: 50px;
+    }
+
+    .nav-link {
+        font-size: 27px;
+        letter-spacing: 3px;
+        color: white;
+    }
+
+    .nav-link:hover {
+        color: white;
+    }
+
+    .toggle-button {
+        display: block;
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        outline: none;
+        position: absolute;
+    }
+
+    .mobile-only {
+        display: block;
+        position: absolute;
+        top: 700px;
+        left: 120px;
+        padding: 10px;
+
+    }
+
+    .navbar-nav.active {
+        display: flex;
+        transform: translateY(0);
+    }
+
+    .navbar-toggle {
+        display: block;
+        margin-right: 30px;
+        color: white;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 900;
+    }
+
+    .logonav {
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 700;
+        font-size: 25px;
+        color: #333;
+        letter-spacing: 0.1em;
+        text-transform: uppercase; 
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(45deg, #08012a, #1abaded6);
+        -webkit-background-clip: text;
+        color: transparent;
+        transform: rotate(-5deg);
+    }
+
+    .logonav2 {
+        text-decoration: none;
+        text-align: center;
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 700;
+        font-size: 15px;
+        color: #333;
+        letter-spacing: 0.1em;
+        text-transform: uppercase; 
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(45deg, #08012a, #1abaded6);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .bar {
+        background-color: white;
+        margin: 5px auto;
+        transition: transform 0.4s, opacity 0.2s;
+        margin-right: 30px;
+    }
+
+    body .achbg {
+        width: 100%; 
+        height: 231px;
+        margin-top: 100px;
+    }
+    
+    .achbg .achp {
+        font-size: 25px; 
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding-top: 100px;
+    }
+
+    body .gallerysect {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    body section .gallery .gallery-item {
+        flex: 1 0 calc(100% - 10px); /* Adjust the width of each item for smaller screens */
+    }
+
+    .gallery-item .hidden-section {
+        padding-bottom: 30px;
+        width: 300px;
+    }
+
+    body .footersect {
+        background-color: black; 
+        display: block; 
+    }
+    
+    .footersect .footerdiv {
+        color: white; 
+        padding-top: 25px;
+        text-align: center;
+    }
+    
+    .footersect .footerdiv2 {
+        color: white; 
+        text-align: center;
+    }
+
+    .footerdiv2 .footerlogo {
+        justify-content: center;
+    }
+
+    .footerdiv #footerspan {
+        font-family: 'Roboto', sans-serif; 
+        font-weight: 700;
+        font-size: 22px;
+        color: #333;
+        letter-spacing: 0.1em;
+        text-transform: uppercase; 
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(45deg, #08012a, #1abaded6);
+        -webkit-background-clip: text;
+        color: transparent;
+        transform: rotate(-5deg);
+    }
+    
+    .footeranchor {
+        text-decoration: none; 
+        color: white; 
+        font-weight: 700; 
+        font-size: 35px;
+    }
+}
+
+.achbg {
+    width: 100%; 
+    height: 631px; 
+    object-fit: cover; 
+    background-image: url('./../../../Image/82BA579A-5D1C-4885-B9A8-465A7AEA595B.PNG'); 
+    background-size: cover;
+}
+
+.achp {
+    font-size: 35px; 
+    font-weight: 700; 
+    color: white; 
+    text-align: center; 
+    padding-top: 350px; 
+    letter-spacing: 2px;
+}
+
+.gallerysect {
+    padding-top: 50px;
+}
+
+.gallery {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between items */
+}
+  
+.gallery-item {
+    position: relative;
+    flex: 1 0 calc(33.333% - 10px); /* Adjust the width of each item */
+}
+  
+.gallery-item img {
+    width: 100%;
+    height: auto;
+}
+  
+
+.hidden-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2.5s ease, transform 2.5s ease; 
+    position: relative;
+}
+
+.visible-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+  
+
+.footersect {
+    background-color: black; 
+    display: flex; 
+    justify-content: space-around;
+}
+
+.footerdiv {
+    color: white; 
+    padding-top: 35px;
+}
+
+#footerspan {
+    color: white;
+}
+
+.footeranchor {
+    text-decoration: none; 
+    color: white; 
+    font-weight: 700; 
+    font-size: 35px;
+}
+
+.footerlogo {
+    display: flex; 
+    justify-content: end;
+}
